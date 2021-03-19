@@ -8,6 +8,7 @@ export const SET_ERROR = "SET_ERROR"
 
 const fetchSmurfs = () => {
   return (dispatch => {
+    console.log("Fetching....")
     dispatch({type: BEGIN_FETCH})
     axios.get('http://localhost:3333/smurfs')
       .then(res => {

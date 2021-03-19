@@ -23,10 +23,13 @@ const AddForm = (props) => {
         if (state.name === "" || state.position === "" || state.nickname === "") {
             props.setError("Name, position and nickname fields are required.")
         }
-        props.addSmurf(state)
+        else {
+            props.addSmurf(state)
+        }
     }
 
-    return(<section>
+    return (
+    <section>
         <h2>Add Smurf</h2>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -60,6 +63,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {setError, addSmurf})(AddForm);
-
-//3. Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when this validation code fails.
-//4. Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.

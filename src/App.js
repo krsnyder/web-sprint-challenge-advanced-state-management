@@ -10,10 +10,10 @@ import "./App.css";
 import fetchSmurfs from './actions'
 
 class App extends Component {
-
+    
   componentDidMount() {
-    fetchSmurfs()
-  }
+      this.props.fetchSmurfs()
+    }
 
   render() {
     return (

@@ -21,7 +21,7 @@ const SmurfList = (props) => {
         {
             smurfs.map(smurf => {
                 return (
-                    <Smurf smurf={smurf} />
+                    <Smurf key={ smurf.id } smurf={smurf} />
                 )
             })
         }
