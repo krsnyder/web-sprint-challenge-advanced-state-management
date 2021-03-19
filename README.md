@@ -167,6 +167,20 @@ Example of object created in Smurf DB:
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
 1. What problem does the context API help solve?
+Similarly to Redux, the Context API allows us to pass props to components as we need them while avoiding prop drilling.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+When working with complex applications, it's important that we maintain a reliable and predictable source of what the current state of the application is over time. This allows us to avoid bugs and easily track them down when they appear. The `store` acts as our global reference to the current state of the application.
+
+Just as the array.reducer() method lets us reduce multiple array values into a single value, `reducers` and `actions` allow us to take our state and an action object and create a new state object. Remember, state is immutable. We cannot change the current state, but we can pass the current state and an action object to our reducer to update the state.
+
+An action is an object consisting of a type and a payload. Type is the only required property and it tells the reducer what we want to return as the updated state when an event occurs. Each action appears in our reducer as a different case and allows us to handle many different changes to our state. The payload is any data that needs to be passed from the origin of the event (e.g. an axios response).
+
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
+`redux-thunk` is a valuable piece of middleware that allows us to perform asynchronous updates to our state. Typically, actions can only return objects. But using thunk we an action can return other actions allowing us to update state asynchronously.
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+I really like the process of using redux. It has the most boilerplate for sure but I can see how it keeps things organized once the application gets complicated. I will probably use the Context API more regularly for my own smaller projects because it requires the least setup but overall I prefer the redux model.
+
+
