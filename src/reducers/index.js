@@ -5,12 +5,20 @@ export const initialState = {
   errorMessage: ""
 }
 
-const reducer = (state = initialState, action) =>{
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ("SMURF_FETCH"):
+      return ({
+        ...state,
+        smurfs: action.payload
+      })
+    default:
+      return(state)
+  }
 }
 
 export default reducer;
 
-//2. Add in the arguments needed to complete a standard reducer function.
 //3. Add in a reducer case to accomidate the start of a smurf fetch.
 //4. Add in a reducer case to accomidate the successful smurf api fetch.
 //5. Add in a reducer cases to accomidate the failed smurf api fetch.
