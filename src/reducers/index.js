@@ -10,7 +10,8 @@ const reducer = (state = initialState, action) => {
     case ("BEGIN_FETCH"):
       return ({
         ...state,
-        loading: true
+        loading: true,
+        error: ""
       })
     case ("FETCH_SUCCESS"):
       return ({
